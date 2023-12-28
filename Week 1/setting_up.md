@@ -7,9 +7,12 @@ Welcome to the world of Python 🐍🐍🐍! This guide will walk you through th
 2. [Activating Conda Environment](#activating-conda-environment)
 3. [Using VS Code with Conda](#using-vs-code-with-conda)
 4. [Installing Jupyter Notebook](#installing-jupyter-notebook)
-5. [Understanding Jupyter Notebooks](#understanding-jupyter-notebooks)
-6. [Conclusion](#conclusion)
-7. [Additional Resources](#additional-resources)
+5. [Launching Jupyter outside of VSCode](#launching-jupyter-outside-of-vscode)
+6. [Understanding Jupyter Notebooks](#understanding-jupyter-notebooks)
+7. [Installing Additional Python Packages](#installing-additional-python-packages)
+8. [Finding Installation Commands for Python Packages](#finding-installation-commands-for-python-packages)
+9. [Conclusion](#conclusion)
+10. [Additional Resources](#additional-resources)
 
 ## Setting Up Conda
 
@@ -51,6 +54,8 @@ Visual Studio Code (VS Code) is a popular IDE for Python development. It can int
 
 When you open a project in VS Code, it may prompt you to activate the Conda environment. Alternatively, you can select the Python interpreter from the bottom-right corner, which corresponds to your Conda environment.
 
+You can find a video of how to do this [here](pics/select_kernel_vscode.mov). (Note: It's a video file so you might have to open it from your finder or files browser window. It is saved in Week 1/pics/ select_kernel_vscode.mov)
+
 ### Difference Between Terminal and VS Code Activation
 
 - **Terminal Activation**: This is universal and works in all shell environments. You need to do this every time you open a new terminal.
@@ -75,14 +80,84 @@ conda install -c conda-forge notebook
 
 Jupyter Notebooks differ from scripts in that they allow a more interactive development experience. They are ideal for data analysis, visualization, and exploratory programming.
 
-### How is it Different from a Script?
+## Launching Jupyter outside of VSCode
 
-- **Jupyter Notebook - .ipynb**: Interactive, supports inline comments and media, great for visualization and exploratory analysis.
-- **Python Script - .py**: Linear execution of code, more suitable for final, production-ready projects. Allows import of functions into other scripts or notebooks.
+Sometimes, you might prefer to work with Jupyter Notebooks outside of an Integrated Development Environment (IDE) like Visual Studio Code. Launching Jupyter Notebooks independently offers a more focused interface and can be more resource-efficient.
 
-## Installing Additional Python Packages
+### Steps to Launch Jupyter Notebook
 
-Expanding your Python project often requires the installation of additional packages. This section covers how to install these packages using both Jupyter Notebooks and the terminal.
+1. **Open the Terminal**: Start by opening your terminal or command prompt.
+
+2. **Activate Your Conda Environment**: If you're using a Conda environment, make sure to activate it:
+
+    ```bash
+    conda activate myenv
+    ```
+
+    Replace `myenv` with the name of your Conda environment.
+
+3. **Start Jupyter Notebook**:
+   
+    Run the following command:
+
+    ```bash
+    jupyter notebook
+    ```
+
+    This command launches Jupyter Notebook in your default web browser.
+
+4. **Navigate to Your Project Folder**: In the Jupyter Notebook interface, navigate to the directory where your project files are located.
+
+5. **Create or Open a Notebook**: You can create a new notebook or open an existing one from this interface.
+
+### Benefits of Using Jupyter Outside VSCode
+
+- **Simplified Interface**: Jupyter outside of VSCode offers a streamlined, notebook-focused interface.
+- **Resource Efficiency**: Running Jupyter independently can sometimes be less resource-intensive than running it within an IDE.
+- **Easy Access to Notebook Features**: All Jupyter features and extensions are readily available in this standalone mode.
+
+### Considerations
+
+- **File Access**: Ensure that the Jupyter Notebook has access to the files and folders needed for your project.
+- **Environment Consistency**: If using a specific Python environment, remember to launch Jupyter from that environment to maintain package and Python version consistency.
+
+
+### How is a Notebook Different from a Script?
+
+- **Jupyter Notebook - .ipynb**: Interactive, supports inline comments and media, great for visualization and exploratory analysis. Supports running each cell at a time. More difficult to use with debugger but cell by cell execution can help with debugging.
+
+- **Python Script - .py**: Linear execution of code, more suitable for final, production-ready projects. Allows import of functions into other scripts or notebooks. Runs entire script at once. Easier to use with debugger.
+
+## Installing Additional Python Libraries and Packages
+
+Expanding your Python project often requires the installation of additional libraries and packages. This section not only covers how to install these packages using both Jupyter Notebooks and the terminal but also explains what packages and libraries are in the context of Python programming.
+
+### What are Packages?
+
+In Python, a **package** is a collection of modules. A module is simply a file containing Python code that can define functions, classes, and variables. These modules are organized into packages, which can be imported and used in your Python scripts or projects. Packages are essentially directories with Python files and a file named `__init__.py`. 
+
+### What are Libraries?
+
+A **library** in Python is a collection of modules or packages. It's a broader term that encompasses packages and provides a set of utilities for a specific purpose, like data analysis, image processing, or web development. For example, `numpy` and `pandas` are popular libraries for numerical computing and data analysis, respectively.
+
+### Why Use Packages and Libraries?
+
+- **Code Reusability**: Libraries and packages allow you to use code that has already been written, tested, and optimized by others, saving you time and effort.
+- **Efficiency**: Many libraries are optimized for performance, offering efficient implementations of operations that could be time-consuming and complex to write from scratch.
+- **Community Support**: Popular Python libraries are supported by large communities, providing documentation, tutorials, and forums for troubleshooting.
+- **Feature-Rich**: Libraries often come with a wide range of features that can simplify complex tasks in data processing, machine learning, etc.
+
+### Installing Packages
+
+You can install packages in Python using package managers like `pip` (Python's package installer) or Conda. 
+
+#### Using Jupyter Notebooks
+
+In Jupyter Notebooks, you can install packages directly within the notebook environment using the `!` command:
+
+```python
+!pip install numpy
+
 
 ### In Jupyter Notebooks
 
